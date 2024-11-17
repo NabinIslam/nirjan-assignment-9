@@ -1,7 +1,9 @@
+import { Button } from "flowbite-react";
+
 const Homepage = () => {
   return (
     <div>
-      <h1>This is Homepage Component</h1>
+      <Button>Click me</Button>;
     </div>
   );
 };

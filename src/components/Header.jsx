@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
-    <header>
+    <header className="shadow">
       <nav className="container">
         <Navbar fluid rounded>
           <Navbar.Brand href="/">

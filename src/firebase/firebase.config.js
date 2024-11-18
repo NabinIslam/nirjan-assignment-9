@@ -5,12 +5,12 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
-  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
-  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
-  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
-  appId: import.meta.env.VITE_FIREBASE_APP_ID,
+  apiKey: "AIzaSyBn9M7j9J_9YscCbVGk1C98crvZS0iuuiY",
+  authDomain: "lingo-bingo-3ef32.firebaseapp.com",
+  projectId: "lingo-bingo-3ef32",
+  storageBucket: "lingo-bingo-3ef32.firebasestorage.app",
+  messagingSenderId: "426599652710",
+  appId: "1:426599652710:web:455dc4ceb610023421fca7",
 };
 
 // Initialize Firebase

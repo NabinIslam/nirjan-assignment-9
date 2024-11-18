@@ -1,7 +1,10 @@
 import { Button, Navbar } from "flowbite-react";
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../provider/AuthProvider";
 
 const Header = () => {
+  const { user, logout } = useContext(AuthContext);
   return (
     <header className="shadow">
       <nav className="container">
@@ -15,9 +18,14 @@ const Header = () => {
             </Link>
           </Navbar.Brand>
           <div className="flex md:order-2">
-            <Link to="/login">
-              <Button>Login</Button>
-            </Link>
+            {user ? (
+              <Button onClick={() => logout()}>Logout</Button>
+            ) : (
+              <Link to="/login">
+                <Button>Login</Button>
+              </Link>
+            )}
+
             <Navbar.Toggle />
           </div>
           <Navbar.Collapse>

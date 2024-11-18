@@ -1,6 +1,15 @@
 import { Button, Label, TextInput } from "flowbite-react";
+import { useContext } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { AuthContext } from "../provider/AuthProvider";
 
 const Login = () => {
+  const { login, setUser } = useContext(AuthContext);
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const from = location.state?.from?.pathname || "/";
+
   const handleSubmit = e => {
     e.preventDefault();
 
@@ -9,7 +18,12 @@ const Login = () => {
     const email = form.get("email");
     const password = form.get("password");
 
-    console.log({ email, password });
+    login(email, password)
+      .then(result => {
+        setUser(result?.user);
+        navigate(from, { replace: true });
+      })
+      .catch(err => console.error(err));
   };
 
   return (
@@ -36,7 +50,13 @@ const Login = () => {
           </div>
           <TextInput id="password" name="password" type="password" required />
         </div>
-        <Button type="submit">Submit</Button>
+        <Button type="submit">Login</Button>
+        <p className="text-sm">
+          Don't have an account?{" "}
+          <Link className="font-medium hover:underline" to="/register">
+            Register
+          </Link>
+        </p>
       </form>
     </main>
   );

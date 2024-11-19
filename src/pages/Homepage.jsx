@@ -1,10 +1,11 @@
 import { Button } from "flowbite-react";
+import Hero from "../components/Hero";
 
 const Homepage = () => {
   return (
-    <div>
-      <Button>Click me</Button>;
-    </div>
+    <main>
+      <Hero />
+    </main>
   );
 };
 

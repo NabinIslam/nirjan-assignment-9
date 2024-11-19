@@ -2,9 +2,11 @@ import { Button, Label, TextInput } from "flowbite-react";
 import { useContext } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
+import toast from "react-hot-toast";
+import GoogleButton from "react-google-button";
 
 const Login = () => {
-  const { login, setUser } = useContext(AuthContext);
+  const { signIn, googleSignIn } = useContext(AuthContext);
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -18,10 +20,20 @@ const Login = () => {
     const email = form.get("email");
     const password = form.get("password");
 
-    login(email, password)
-      .then(result => {
-        setUser(result?.user);
+    signIn(email, password)
+      .then(() => {
         navigate(from, { replace: true });
+
+        toast.success("Login successful");
+      })
+      .catch(err => console.error(err));
+  };
+
+  const handleGoogleSignIn = () => {
+    googleSignIn()
+      .then(() => {
+        navigate(from, { replace: true });
+        toast.success("Login successful");
       })
       .catch(err => console.error(err));
   };
@@ -58,6 +70,10 @@ const Login = () => {
           </Link>
         </p>
       </form>
+
+      <div className="flex mt-5 items-center justify-center">
+        <GoogleButton onClick={handleGoogleSignIn} />
+      </div>
     </main>
   );
 };

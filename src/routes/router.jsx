@@ -9,6 +9,7 @@ import AboutUs from "../pages/AboutUs";
 import Tutorials from "../pages/Tutorials";
 import MyProfile from "../pages/MyProfile";
 import PrivateRoute from "./PrivateRoute";
+import UpdateProfile from "../pages/UpdateProfile";
 
 const router = createBrowserRouter([
   {
@@ -32,7 +33,7 @@ const router = createBrowserRouter([
         path: "/start-learning",
         element: (
           <PrivateRoute>
-            <StartLearning />,
+            <StartLearning />
           </PrivateRoute>
         ),
       },
@@ -44,7 +45,7 @@ const router = createBrowserRouter([
         path: "/tutorials",
         element: (
           <PrivateRoute>
-            <Tutorials />,
+            <Tutorials />
           </PrivateRoute>
         ),
       },
@@ -52,7 +53,15 @@ const router = createBrowserRouter([
         path: "/my-profile",
         element: (
           <PrivateRoute>
-            <MyProfile />,
+            <MyProfile />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/update-profile",
+        element: (
+          <PrivateRoute>
+            <UpdateProfile />
           </PrivateRoute>
         ),
       },

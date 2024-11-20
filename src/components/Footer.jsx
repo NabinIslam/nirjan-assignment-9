@@ -28,14 +28,14 @@ const FooterComponent = () => {
                   <Footer.Title title="about" />
                   <Footer.LinkGroup col>
                     <Footer.Link href="#">Lingo Bingo</Footer.Link>
-                    <Footer.Link href="#">Tailwind CSS</Footer.Link>
+                    <Footer.Link href="#">Mission and Vision</Footer.Link>
                   </Footer.LinkGroup>
                 </div>
                 <div>
                   <Footer.Title title="Follow us" />
                   <Footer.LinkGroup col>
-                    <Footer.Link href="#">Github</Footer.Link>
-                    <Footer.Link href="#">Discord</Footer.Link>
+                    <Footer.Link href="#">Facebook</Footer.Link>
+                    <Footer.Link href="#">Instagram</Footer.Link>
                   </Footer.LinkGroup>
                 </div>
                 <div>

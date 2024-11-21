@@ -6,7 +6,9 @@ const StartLearning = () => {
       <Helmet>
         <title>Lingo Bingo | Start Learning</title>
       </Helmet>
-      <h1>This is StartLearning Component</h1>
+      <div className="container">
+        <h1>This is StartLearning Component</h1>
+      </div>
     </main>
   );
 };

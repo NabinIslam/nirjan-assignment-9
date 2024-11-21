@@ -5,36 +5,39 @@ import App from "./App.jsx";
 import AuthProvider from "./provider/AuthProvider.jsx";
 import { Toaster } from "react-hot-toast";
 import "animate.css";
+import { HelmetProvider } from "react-helmet-async";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <AuthProvider>
-      <Toaster
-        position="top-center"
-        toastOptions={{
-          className: "",
-          duration: 3000,
-          style: {
-            background: "#363636",
-            color: "#fff",
-          },
-          success: {
+      <HelmetProvider>
+        <Toaster
+          position="top-center"
+          toastOptions={{
+            className: "",
             duration: 3000,
-            theme: {
-              primary: "green",
-              secondary: "black",
+            style: {
+              background: "#363636",
+              color: "#fff",
             },
-          },
-          error: {
-            duration: 3000,
-            theme: {
-              primary: "red",
-              secondary: "black",
+            success: {
+              duration: 3000,
+              theme: {
+                primary: "green",
+                secondary: "black",
+              },
             },
-          },
-        }}
-      />
-      <App />
+            error: {
+              duration: 3000,
+              theme: {
+                primary: "red",
+                secondary: "black",
+              },
+            },
+          }}
+        />
+        <App />
+      </HelmetProvider>
     </AuthProvider>
   </StrictMode>
 );

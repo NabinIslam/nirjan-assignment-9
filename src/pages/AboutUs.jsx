@@ -1,3 +1,5 @@
+import { Helmet } from "react-helmet-async";
+
 const AboutUs = () => {
   return (
     <main className="container mx-auto px-4 py-12">

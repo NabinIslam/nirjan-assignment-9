@@ -19,7 +19,7 @@ const Header = () => {
   };
 
   return (
-    <header className="shadow sticky top-0 z-[100000] bg-white">
+    <header className="shadow sticky top-0 z-50 bg-white">
       <nav className="container">
         <Navbar fluid rounded>
           <Navbar.Brand>

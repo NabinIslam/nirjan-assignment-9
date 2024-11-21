@@ -1,6 +1,9 @@
 const AboutUs = () => {
   return (
     <main className="container mx-auto px-4 py-12">
+      <Helmet>
+        <title>Lingo Bingo | About Us</title>
+      </Helmet>
       {/* Mission Section */}
       <section className="mb-12">
         <h2 className="text-3xl font-bold mb-4">Our Mission</h2>

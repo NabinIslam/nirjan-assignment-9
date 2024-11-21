@@ -2,12 +2,16 @@ import { useContext } from "react";
 import { AuthContext } from "../provider/AuthProvider";
 import { Button } from "flowbite-react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 const MyProfile = () => {
   const { user } = useContext(AuthContext);
 
   return (
     <main>
+      <Helmet>
+        <title>Lingo Bingo | Profile</title>
+      </Helmet>
       <div className="container py-10 flex flex-col items-center justify-center gap-5">
         <h1 className="text-xl">
           Welcome, <span className="font-bold">{user.displayName}</span>

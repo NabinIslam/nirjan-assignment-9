@@ -4,6 +4,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
 import toast from "react-hot-toast";
 import GoogleButton from "react-google-button";
+import { Helmet } from "react-helmet-async";
 
 const Register = () => {
   const { createUser, updateUser, googleSignIn } = useContext(AuthContext);
@@ -46,6 +47,9 @@ const Register = () => {
 
   return (
     <main className="pt-40">
+      <Helmet>
+        <title>Lingo Bingo | Register</title>
+      </Helmet>
       <div className="container">
         <form
           className="flex max-w-md flex-col gap-4 mx-auto"
